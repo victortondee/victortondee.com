@@ -47,7 +47,7 @@ pinned = [
     "67fb51fcdb493a47b84f8ee4",  # 40 4
     "67fb51fe7de0cd9c38295442",  # 41 f
     "67fb520057845eeb8b05674b",  # 42 A05623+(for+Sofi)
-    "67fb51fd499124434e8af5c7",  # 43 051807260
+    "67fb51fe711f1499326fdb5a",  # 43 b+Screen
     "67fb51fc92acf6bde6327dbc",  # 44 1
     "67fb51fd1009eed541390efc",  # 45 g+A03350_mirrored
     "67fb51fc8e1e98a169893203",  # 46 6
@@ -65,7 +65,7 @@ pinned = [
     "67fb51fea7124abc196053a3",  # 58 A03200
     "67fb51ff83fe90673155743c",  # 59 image-asset
     "67fb51ff4edb14179b2e7956",  # 60 image-asset(1) (swap3: was A03200)
-    "67fb51fe711f1499326fdb5a",  # 61 b+Screen
+    "67fb51fd499124434e8af5c7",  # 61 051807260
     "67fb51fe1746ed1633606b4c",  # 62 08
     "67fb51fc93824817822c948f",  # 63 31172
     "67fb51fffb163757cb9dedef",  # 64 d+071702165_mirrored
