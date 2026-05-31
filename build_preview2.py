@@ -42,7 +42,7 @@ pinned = [
     "67fb51fdcad347c3931d4307",  # 35 a+17234_mirrored
     "67fb51fe2abda3933caf4d22",  # 36 IMG_9970_shapes_edit
     "67fb520090d84f183a5101bd",  # 37 A04076
-    "67fb8558e1601bfa7bc38f28",  # 38 28281
+    "67fb51fea7124abc196053a3",  # 38 A03200
     "67fb51fea99339ceb58615d2",  # 39 h+20804+(mirrored)
     "67fb51fcdb493a47b84f8ee4",  # 40 4
     "67fb51fe7de0cd9c38295442",  # 41 f
@@ -62,7 +62,7 @@ pinned = [
     "67fb52010276e79ad6d73685",  # 55 A03714+A02981
     "67fb52032fbef7e18cf9133c",  # 56 21(2)
     "67fb51fcefbb81d7259692f4",  # 57 11
-    "67fb51fea7124abc196053a3",  # 58 A03200
+    "67fb8558e1601bfa7bc38f28",  # 58 28281
     "67fb51ff83fe90673155743c",  # 59 image-asset
     "67fb51ff4edb14179b2e7956",  # 60 image-asset(1) (swap3: was A03200)
     "67fb51fd499124434e8af5c7",  # 61 051807260
