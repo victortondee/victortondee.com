@@ -42,7 +42,7 @@ pinned = [
     "67fb51fdcad347c3931d4307",  # 35 a+17234_mirrored
     "67fb51fe2abda3933caf4d22",  # 36 IMG_9970_shapes_edit
     "67fb520090d84f183a5101bd",  # 37 A04076
-    "67fb51fea7124abc196053a3",  # 38 A03200
+    "67fb51fffb163757cb9dedef",  # 38 d+071702165_mirrored (swap: was A03200)
     "67fb51fea99339ceb58615d2",  # 39 h+20804+(mirrored)
     "67fb51fcdb493a47b84f8ee4",  # 40 4
     "67fb51fd499124434e8af5c7",  # 41 051807260
@@ -66,20 +66,20 @@ pinned = [
     "67fb51ff83fe90673155743c",  # 59 image-asset
     "67fb51ff4edb14179b2e7956",  # 60 image-asset(1) (swap3: was A03200)
     "67fb5200f233a60a03b00d0d",  # 61 IMG_4265
-    "67fb51fffb163757cb9dedef",  # 62 d+071702165_mirrored
+    "67fb51fea7124abc196053a3",  # 62 A03200 (swap: was d+071702165_mirrored)
     "67fb51fc93824817822c948f",  # 63 31172
     "67fb51fe1746ed1633606b4c",  # 64 08
     "67fb51fe7de0cd9c38295442",  # 65 f
 ]
 
 CSS = """.w-webflow-badge { display: none !important; }.gallery .image{height:auto!important}
-.gallery .columns{display:grid !important;grid-template-columns:repeat(3,1fr) !important;grid-auto-rows:1px !important;column-gap:16px !important;row-gap:0 !important;column-count:auto !important;-webkit-column-count:auto !important;}
+.gallery .columns{display:grid !important;grid-template-columns:repeat(3,1fr) !important;grid-auto-rows:1px !important;column-gap:7px !important;row-gap:0 !important;column-count:auto !important;-webkit-column-count:auto !important;}
 @media screen and (max-width:991px){.gallery .columns{grid-template-columns:repeat(2,1fr) !important;}}
 @media screen and (max-width:767px){.gallery .columns{grid-template-columns:1fr !important;}}
 .gallery .masonry-item{width:auto !important;margin:0 !important;float:none !important;display:block !important;}
 .gallery .image{width:100% !important;height:auto !important;display:block !important;}"""
 
-JS_MASONRY = """<script>(function(){var UNIT=1,GAP=16;function colCount(){var w=window.innerWidth;if(w<=767)return 1;if(w<=991)return 2;return 3;}function layout(){var grid=document.querySelector('.gallery .columns');if(!grid)return;var items=grid.querySelectorAll('.masonry-item');var cols=colCount();var cursor=[];for(var c=0;c<cols;c++)cursor[c]=1;for(var i=0;i<items.length;i++){var it=items[i];var img=it.querySelector('.image');var h=img?img.getBoundingClientRect().height:0;if(!h)continue;var span=Math.ceil((h+GAP)/UNIT);var col=i%cols;it.style.gridColumnStart=String(col+1);it.style.gridRowStart=String(cursor[col]);it.style.gridRowEnd='span '+span;cursor[col]+=span;}}function s(){requestAnimationFrame(layout);}if(document.readyState!=='loading')s();else document.addEventListener('DOMContentLoaded',s);window.addEventListener('load',s);window.addEventListener('resize',s);document.querySelectorAll('.gallery .image').forEach(function(img){if(!img.complete)img.addEventListener('load',s);});[500,1500,3000].forEach(function(d){setTimeout(s,d);});})();</script>"""
+JS_MASONRY = """<script>(function(){var UNIT=1,GAP=7;function colCount(){var w=window.innerWidth;if(w<=767)return 1;if(w<=991)return 2;return 3;}function layout(){var grid=document.querySelector('.gallery .columns');if(!grid)return;var items=grid.querySelectorAll('.masonry-item');var cols=colCount();var cursor=[];for(var c=0;c<cols;c++)cursor[c]=1;for(var i=0;i<items.length;i++){var it=items[i];var img=it.querySelector('.image');var h=img?img.getBoundingClientRect().height:0;if(!h)continue;var span=Math.ceil((h+GAP)/UNIT);var col=i%cols;it.style.gridColumnStart=String(col+1);it.style.gridRowStart=String(cursor[col]);it.style.gridRowEnd='span '+span;cursor[col]+=span;}}function s(){requestAnimationFrame(layout);}if(document.readyState!=='loading')s();else document.addEventListener('DOMContentLoaded',s);window.addEventListener('load',s);window.addEventListener('resize',s);document.querySelectorAll('.gallery .image').forEach(function(img){if(!img.complete)img.addEventListener('load',s);});[500,1500,3000].forEach(function(d){setTimeout(s,d);});})();</script>"""
 
 JS_LAZY = """<script>(function(){var imgs=document.querySelectorAll('.gallery .masonry-item img[data-src]');if(!imgs.length)return;var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(!e.isIntersecting)return;var img=e.target;if(img.dataset.src){img.src=img.dataset.src;delete img.dataset.src;}if(img.dataset.srcset){img.srcset=img.dataset.srcset;delete img.dataset.srcset;}img.addEventListener('load',function(){window.dispatchEvent(new Event('resize'));},{once:true});io.unobserve(img);});},{rootMargin:'300px 0px'});imgs.forEach(function(img){io.observe(img);});})();</script>"""
 
