@@ -1,0 +1,6 @@
+# GitHub Pages (Jekyll) configuration.
+# Keep the archived previous site in the repo for reference / rewind,
+# but do NOT publish it to the live site. Excluded paths are omitted
+# from the built output, so https://www.victortondee.com/archive/ 404s.
+exclude:
+  - archive
