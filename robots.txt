@@ -1,0 +1,5 @@
+# robots.txt for victortondee.com
+User-agent: *
+Allow: /
+
+Sitemap: https://www.victortondee.com/sitemap.xml
