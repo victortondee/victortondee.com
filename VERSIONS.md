@@ -34,3 +34,15 @@ git reset --hard <sha>
   WebP, hover/touch + viewport + neighbor prefetching, and font loading
   prioritized over images across all pages. Rewind here to get the working,
   optimized site before any masonry gallery architecture changes.
+
+## v3 — redesigned site promoted to main (light default + dark toggle)
+
+- **Commit:** `fe751f1` (`Promote redesigned site to main; archive previous version`)
+- **Date recorded:** 2026-06-02
+- **Note:** The `preview2` redesign is now the live site at the repo root.
+  Light theme is the default on all devices, with a fixed dark/light toggle
+  (bottom-left) that persists via the `vt-theme` localStorage key; dark mode
+  uses a single uniform `#0e0e0e` background including the header and the
+  expanded mobile menu. The previous main site (the prior root `*.html`) was
+  moved to `archive/` and remains viewable at `/archive/`. Rewind here for the
+  first published version of the redesigned site.
