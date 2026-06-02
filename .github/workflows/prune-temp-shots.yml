@@ -1,0 +1,47 @@
+name: prune-temp-shots
+
+# Deletes temporary mobile-preview screenshots once they expire.
+# Files in tmp-shots/ are named:  <label>__exp<UNIX_EPOCH>.png
+# Any file whose <UNIX_EPOCH> is in the past is removed and the deletion pushed.
+# (Used to show desktop renders on mobile via the live site, then auto clean up.)
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'   # every ~15 min (GitHub may delay scheduled runs)
+  workflow_dispatch: {}        # allow manual trigger
+
+permissions:
+  contents: write
+
+concurrency:
+  group: prune-temp-shots
+  cancel-in-progress: false
+
+jobs:
+  prune:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Prune expired screenshots
+        run: |
+          set -euo pipefail
+          now=$(date +%s)
+          changed=0
+          shopt -s nullglob
+          for f in tmp-shots/*__exp*.png; do
+            exp=$(printf '%s' "$f" | sed -n 's/.*__exp\([0-9][0-9]*\)\.png$/\1/p')
+            if [ -n "$exp" ] && [ "$exp" -lt "$now" ]; then
+              echo "Pruning $f (expired: exp=$exp < now=$now)"
+              git rm --quiet "$f"
+              changed=1
+            fi
+          done
+          if [ "$changed" = "1" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "Auto-prune expired temp screenshots"
+            git push
+          else
+            echo "Nothing to prune."
+          fi
