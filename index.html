@@ -33,7 +33,7 @@ html.vt-anim body{animation:vt-fade-in .55s ease both;}
 html.vt-anim .masonry-item{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1),background-color .4s ease;}
 html.vt-anim .masonry-item.is-in{opacity:1;transform:none;}
 .masonry-item .image{transition:transform .6s cubic-bezier(.2,.7,.2,1);}
-.masonry-item:hover .image{transform:scale(1.045);}
+@media (hover:hover){.masonry-item:hover .image{transform:scale(1.045);}}
 .navlink{transition:transform .25s cubic-bezier(.2,.7,.2,1),color .3s ease;}
 .navlink:hover{transform:translateX(4px);}
 .brand-5{transition:opacity .25s ease,transform .25s ease;}
